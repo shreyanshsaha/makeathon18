@@ -6,6 +6,8 @@ import numpy as np
 import tensorflow as tf
 import cv2
 import time
+from time import sleep
+from client import *
 
 
 class DetectorAPI:
@@ -64,10 +66,10 @@ if __name__ == "__main__":
     odapi = DetectorAPI(path_to_ckpt=model_path)
     threshold = 0.7
     cap = cv2.VideoCapture(0)
-
+    client = connectToServer()
     while True:
         r, img = cap.read()
-        img = cv2.resize(img, (1280, 720))
+        img = cv2.resize(img, (640, 480))
 
         boxes, scores, classes, num = odapi.processFrame(img)
 
@@ -78,8 +80,17 @@ if __name__ == "__main__":
             if classes[i] == 1 and scores[i] > threshold:
                 box = boxes[i]
                 cv2.rectangle(img,(box[1],box[0]),(box[3],box[2]),(255,0,0),2)
-
-        cv2.imshow("preview", img)
+                # ifx < 50000 x in (box[1]-box[3])*(box[0]-box[2]))
+                area = (box[1]-box[3])*(box[0]-box[2])
+                
+                if area>50000:
+                    sendData("h",client)
+                    # sleep(0.2)
+                else:
+                    sendData("nh",client)
+                    # sleep(0.2)
+        # cv2.imshow("preview", img)
         key = cv2.waitKey(1)
         if key & 0xFF == ord('q'):
+            closeServer(client)
             break
