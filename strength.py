@@ -7,7 +7,7 @@
 import sys
 import subprocess
 
-interface = "wlan0"
+interface = "wl01"
 
 # You can add or change the functions to parse the properties of each AP (cell)
 # below. They take one argument, the bunch of text describing one cell in iwlist
