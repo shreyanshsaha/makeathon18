@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
     while True:
         r, img = cap.read()
-        img = cv2.resize(img, (1280, 720))
+        img = cv2.resize(img, (640, 480))
 
         boxes, scores, classes, num = odapi.processFrame(img)
 
