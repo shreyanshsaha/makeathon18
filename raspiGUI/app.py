@@ -4,4 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def renderHome():
-  render_template("home.html")
+  return render_template("home.html")
+
+
+app.run(port=5000, debug=True)
