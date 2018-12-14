@@ -1,4 +1,4 @@
-# Better Automation L&T <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/L%26T.png" width="48">
+# Better Automation <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/L%26T.png" width="48">
 
 
 ## Introduction
@@ -28,3 +28,6 @@ An access point (made by a router) can identify how many devices are connected t
 - Light on processor as it is distributed
 - No need to configure the user devices
 - No need of machine training and user training
+
+
+# Technical Information
