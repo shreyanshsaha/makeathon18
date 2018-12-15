@@ -89,7 +89,7 @@ if __name__ == "__main__":
                 else:
                     sendData("nh",client)
                     # sleep(0.2)
-        # cv2.imshow("preview", img)
+        cv2.imshow("preview", img)
         key = cv2.waitKey(1)
         if key & 0xFF == ord('q'):
             closeServer(client)

@@ -1,6 +1,6 @@
 from socket import *
 def connectToServer():
-    host = "172.16.40.139"
+    host = "192.168.43.134"
     port = 12345
     
     s = socket(AF_INET, SOCK_STREAM)
